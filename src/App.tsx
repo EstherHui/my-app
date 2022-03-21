@@ -1,7 +1,10 @@
 import './App.css';
+import FunctionClick from './components/FunctionClick';
 import {Greet} from './components/Greet';
+import ParentComponent from './components/ParentComponent';
 import { Person } from './components/Person';
 import { PersonList } from './components/PersonList';
+import { Test } from './components/Test';
 
 function App() {
 
@@ -33,9 +36,13 @@ function App() {
 
   return (
     <div className="App">
-      <Greet name= {demo.name} messageCount= {demo.messageCount} isLoggedIn= {demo.isLoggedIn} />   
-      <Person name = {personName}/>   
-      <PersonList names = {arrayName}/>
+      {/* <Greet name= {demo.name} messageCount= {demo.messageCount} isLoggedIn= {demo.isLoggedIn} />   */}
+      {/* <Test name = 'Richer'/>
+      <Test name = 'Beauty'/> */}
+      {/* <Person name = {personName}/>   
+      <PersonList names = {arrayName}/> */}
+      {/* <FunctionClick /> */}
+      <ParentComponent />
     </div>
   );
 }

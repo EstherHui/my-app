@@ -18,5 +18,6 @@ export const Greet = (dear : Greetdear) => { //dear : Greeydear is telling the s
         </div>
     )
     //name is the object we passing from App.tsx
-
+// if use export const that only can import in APP with same class name
+// if use export default can change the name when import
 }
