@@ -45,29 +45,37 @@ class form extends Component {
         Username : ${this.state.username} 
         Comment : ${this.state.comment} 
         Topic: ${this.state.topic} `)
+
+        event.preventDefault()//prevent refresh after close alert prompt out
     }
     
   render() {
-    return (
-   //add onSUbmit to create the submit action
-   <form onSubmit = {this.handlerSubmit}>
 
+    //make value = x become shorten
+    //(previous value = {this.state.username})
+    //(after value = {username})
+      const {username, comment, topic }= this.state
+    return (
+    
+   //add onSubmit to create the submit action
+   <form onSubmit = {this.handlerSubmit}>
+    
     {/*Input element */}  
      <div>
      <label>Username : </label><br/>
-     <input type='text' value={this.state.username} onChange={this.handlerUsernameChange}/>
+     <input type='text' value={username} onChange={this.handlerUsernameChange}/>
     </div>
 
     {/*Text Area */}
     <div>
         <label>Comment : </label><br/>
-        <textarea type ='text' value={this.state.comment} onChange={this.handlerCommentChange}></textarea>
+        <textarea type ='text' value={comment} onChange={this.handlerCommentChange}></textarea>
     </div>
     
     {/*Select Option */}
     <div>
         <label>Topic : </label>
-        <select value={this.state.topic} onChange={this.handlerTopicChange}>
+        <select value={topic} onChange={this.handlerTopicChange}>
             <option value ="happy">Happy</option>
             <option value ="happier">Happier</option>
             <option value ="happiness">Happiness</option>
