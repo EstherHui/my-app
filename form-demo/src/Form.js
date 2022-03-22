@@ -7,7 +7,7 @@ class form extends Component {
       this.state = {
           username : '' ,
           comment : '', 
-          topic : '01'//Select Default  
+          topic : 'happy'//Select Default  
       }
     }
 
@@ -38,10 +38,19 @@ class form extends Component {
         })
         
     }
+
+    handlerSubmit = event =>{
+        //use alert to prompt out the data after user click submit button
+        alert(` 
+        Username : ${this.state.username} 
+        Comment : ${this.state.comment} 
+        Topic: ${this.state.topic} `)
+    }
     
   render() {
     return (
-   <form>
+   //add onSUbmit to create the submit action
+   <form onSubmit = {this.handlerSubmit}>
 
     {/*Input element */}  
      <div>
@@ -59,11 +68,15 @@ class form extends Component {
     <div>
         <label>Topic : </label>
         <select value={this.state.topic} onChange={this.handlerTopicChange}>
-            <option value ="01">Happy</option>
-            <option value ="02">Happier</option>
-            <option value ="03">Happiness</option>
+            <option value ="happy">Happy</option>
+            <option value ="happier">Happier</option>
+            <option value ="happiness">Happiness</option>
         </select>
+        
     </div>
+
+    <br/>
+    <button type='submit'>Submit</button>
 
    </form>
       
